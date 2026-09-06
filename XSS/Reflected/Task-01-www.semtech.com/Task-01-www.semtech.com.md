@@ -77,26 +77,29 @@ An `alert(1)` dialog was observed during testing.
 ### 🧪 Steps To Reproduce
 
 #### 01 — Navigate to the affected page
-  Open:
+Open:
   ```https://www.sierrawireless.com/resources/ebook/```
   
 #### 02 — Locate the search functionality
-  Locate the search box on the page.
+Locate the search box on the page.
 
 #### 03 — Enter the payload
-  Enter the following payload into the search field:
+Enter the following payload into the search field:
   ```<img src=x onerror=alert(1)>```
 
 #### 04 — Submit the search
-  Submit the search request.
+Submit the search request.
 
 #### 05 — Observe the behavior
-  Observe that the supplied input is reflected in the response and the
+Observe that the supplied input is reflected in the response and the
 JavaScript payload executes.
   An `alert(1)` dialog is displayed.
 
 #### 06 — Verification
-  The behavior was reproduced during testing using Google Chrome and observed
+The behavior was reproduced during testing using Google Chrome and observed
 through the browser's Developer Tools.
 
 ### 🎥 Video PoC
+A screen recording demonstrating the observed behavior is included with this
+PoC.
+Evidence: eBook-.mp4

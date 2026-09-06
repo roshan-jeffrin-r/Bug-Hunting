@@ -75,7 +75,7 @@ Notes and techniques related to:
 
 `Burp Suite` • `ffuf` • `Gobuster` • `Nuclei`
 
-Analysis
+### Analysis
 
 `Wireshark` • `CyberChef` • `jq` • `Git`
    

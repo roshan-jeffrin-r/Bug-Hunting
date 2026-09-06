@@ -48,3 +48,72 @@ Validation
 PoC
   ↓
 Responsible Disclosure
+```
+
+## 🔎 Recon & Enumeration
+
+Notes and techniques related to:
+
+- Subdomain Enumeration
+- DNS Enumeration
+- Port Scanning
+- HTTP Probing
+- Technology Fingerprinting
+- JavaScript Analysis
+- Endpoint Discovery
+- Parameter Discovery
+- Content Discovery
+- Cloud Asset Discovery
+
+## Tools
+
+### Recon
+
+`Subfinder` • `Amass` • `httpx` • `Nmap` • `Naabu` • `Katana` • `ffuf`
+
+### Web Testing
+
+`Burp Suite` • `ffuf` • `Gobuster` • `Nuclei`
+
+Analysis
+
+`Wireshark` • `CyberChef` • `jq` • `Git`
+   
+
+## 💥 Proof of Concepts
+
+This section contains PoCs created during my security research.
+
+## 📝 Write-ups
+
+My documented findings and research:
+
+```
+writeups/
+├── xss/
+├── idor/
+├── ssrf/
+├── authentication/
+├── authorization/
+├── api-security/
+└── business-logic/
+```
+Each write-up may include:
+
+- 🔍 Recon
+- 🎯 Attack surface
+- 🧠 Vulnerability analysis
+- 🧪 Reproduction steps
+- 💥 PoC
+- 📈 Impact
+- 🛡️ Remediation
+
+
+
+<!-- Reserved for future topics -->
+
+</td>
+
+</tr>
+
+</table>

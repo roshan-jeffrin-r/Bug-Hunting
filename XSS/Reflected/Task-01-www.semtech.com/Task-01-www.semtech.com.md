@@ -1,35 +1,102 @@
-# A reflected Cross-Site Scripting (XSS) vulnerability was identified on `https://www.sierrawireless.com`
+# 🔴 Reflected Cross-Site Scripting (XSS)
 
-The search functionality on the affected page reflects user-controlled input into the application's response without adequate output encoding. By supplying a crafted XSS payload through the search input, an attacker can cause arbitrary JavaScript to execute in the context of `https://www.sierrawireless.com/resources/ebook/`.
+<p align="center">
+  <img src="https://img.shields.io/badge/Vulnerability-Reflected%20XSS-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Severity-Medium-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Pending%20Validation-orange?style=for-the-badge">
+</p>
 
-The vulnerability was verified in Google Chrome using the browser's Developer Tools, and successful JavaScript execution was observed.
+---
 
-## Steps To Reproduce:
+## 🐞 Vulnerability Overview
 
-1. Navigate to the vulnerable page:
+> [!WARNING]
+> A potential **Reflected Cross-Site Scripting (XSS)** vulnerability was
+> observed during testing of `https://www.sierrawireless.com`.
 
-   `https://www.sierrawireless.com/resources/ebook/`
+The search functionality on the affected page reflects **user-controlled input**
+into the application's response without adequate output encoding.
 
-2. Locate the search box on the page.
+During testing, a crafted XSS payload supplied through the search functionality
+resulted in JavaScript execution within the context of the affected origin.
 
-3. Enter the following proof-of-concept payload into the search box:
+**Affected page:**
 
-   `<img src=x onerror=alert(1)>`
+`https://www.sierrawireless.com/resources/ebook/`
 
-4. Submit the search.
+---
 
-5. Observe that the payload is reflected and the JavaScript executes, resulting in an `alert(1)` dialog.
+## 🎯 Affected Functionality
 
-6. The issue can be reproduced consistently using the affected search functionality.
+| Field | Details |
+|---|---|
+| **Target** | `www.sierrawireless.com` |
+| **Affected Page** | `/resources/ebook/` |
+| **Vulnerability** | Reflected Cross-Site Scripting (XSS) |
+| **Attack Vector** | Search functionality |
+| **Browser Tested** | Google Chrome |
+| **Platform** | HackerOne |
+| **Report State** | Preliminary Review Passed |
+| **Validation** | Pending Program Reproduction |
+| **Status** | 🟠 Pending Validation |
 
-## Impact
+---
 
-An attacker can craft a malicious URL or input containing JavaScript and potentially persuade a victim to interact with the affected search functionality.
+## 📋 Report Status
 
-When successfully triggered, attacker-controlled JavaScript executes in the security context of `www.sierrawireless.com`. Depending on the affected page, victim privileges, and available application functionality, this may allow an attacker to manipulate page content, perform actions available to the victim, or access information exposed to scripts running within the affected origin.
+> [!NOTE]
+> The HackerOne report has passed **preliminary review**.
+>
+> This does **not** confirm that the vulnerability has been validated.
+> The report is currently pending reproduction and further assessment by the
+> program team.
 
-The attached proof-of-concept video demonstrates successful JavaScript execution.
+---
 
-## Author
+## 💥 Proof of Concept
 
-Roshan Jeffrin R
+### Payload
+
+```html
+<img src=x onerror=alert(1)>
+```
+
+### 🔬 Observed Behavior
+
+The supplied input was reflected in the application's response, and the
+JavaScript payload executed successfully in the testing environment.
+
+An `alert(1)` dialog was observed during testing.
+
+> [!IMPORTANT]
+> Successful JavaScript execution was observed during testing, but the issue
+> has not yet been confirmed by the HackerOne program.
+> 
+> Final validation and reproduction by the program team are still pending.
+
+### 🧪 Steps To Reproduce
+
+#### 01 — Navigate to the affected page
+  Open:
+  ```https://www.sierrawireless.com/resources/ebook/```
+  
+#### 02 — Locate the search functionality
+  Locate the search box on the page.
+
+#### 03 — Enter the payload
+  Enter the following payload into the search field:
+  ```<img src=x onerror=alert(1)>```
+
+#### 04 — Submit the search
+  Submit the search request.
+
+#### 05 — Observe the behavior
+  Observe that the supplied input is reflected in the response and the
+JavaScript payload executes.
+  An `alert(1)` dialog is displayed.
+
+#### 06 — Verification
+  The behavior was reproduced during testing using Google Chrome and observed
+through the browser's Developer Tools.
+
+### 🎥 Video PoC

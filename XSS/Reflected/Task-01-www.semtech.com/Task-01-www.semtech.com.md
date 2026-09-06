@@ -102,4 +102,54 @@ through the browser's Developer Tools.
 ### 🎥 Video PoC
 A screen recording demonstrating the observed behavior is included with this
 PoC.
-Evidence: eBook-.mp4
+
+Evidence: `XSS/Reflected/Task-01-www.semtech.com/eBook - Semtech (formerly Sierra Wireless) - Google Chrome 2026-09-03 19-02-00.mp4`
+
+> [!NOTE]
+> The video is a screen recording without audio and is provided solely as
+> visual evidence of the observed behavior.
+
+### 💥 Impact
+
+If confirmed as a reflected XSS vulnerability, an attacker could potentially
+craft malicious input or a URL containing JavaScript and attempt to persuade a
+victim to interact with the affected functionality.
+
+Successful exploitation could allow attacker-controlled JavaScript to execute
+within the security context of the affected origin.
+
+Depending on the application's functionality, victim privileges, and applicable
+security controls, potential consequences may include:
+
+* Manipulation of page content
+* Performing actions available to the victim
+* Accessing information exposed to scripts running within the affected origin
+* Executing attacker-controlled JavaScript in the victim's browser
+
+### 🛡️ Recommended Remediation
+
+The application should properly handle user-controlled input before reflecting
+it into HTML responses.
+
+Recommended measures include:
+
+* Apply context-appropriate output encoding.
+* Avoid inserting untrusted input directly into HTML.
+* Properly sanitize user-controlled HTML where HTML input is legitimately
+required.
+* Implement a strong Content Security Policy (CSP) as an additional
+defense-in-depth measure.
+* Review other functionality using the same input-handling mechanism for
+similar reflection issues.
+
+### 👤 Author
+
+Roshan Jeffrin R
+
+Security Researcher • Bug Hunter
+
+> ⚠️ Disclosure Notice
+>
+> This PoC is published for educational and security research purposes.
+> Vulnerability testing should only be performed against systems where you
+> have explicit authorization.
